@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 
 const pricingTiers = [
   {
+    id: 1,
     title: "Free",
     monthlyPrice: 0,
     buttonText: "Get started for free",
@@ -19,6 +20,7 @@ const pricingTiers = [
     ],
   },
   {
+    id: 2,
     title: "Pro",
     monthlyPrice: 9,
     buttonText: "Sign up now",
@@ -35,6 +37,7 @@ const pricingTiers = [
     ],
   },
   {
+    id: 3,
     title: "Business",
     monthlyPrice: 19,
     buttonText: "Sign up now",
@@ -64,8 +67,8 @@ export const Pricing = () => {
           <p className="section-desc mt-5">Free forever. Upgrade for unlimited tasks, better security, and exclusive features.</p>
         </div>
         <div className="flex flex-col gap-6 items-center mt-10 lg:flex-row lg:items-end lg:justify-center">
-          {pricingTiers.map(({ title, monthlyPrice, buttonText, popular, inverse, features }) => (
-            <div key={Math.floor((Math.random() * 10) + 1)} className={twMerge("card", inverse === true && "border-black bg-black text-white")}>
+          {pricingTiers.map(({ title, monthlyPrice, buttonText, popular, inverse, features, id }) => (
+            <div key={id} className={twMerge("card", inverse === true && "border-black bg-black text-white")}>
               <div className="flex justify-between">
                 <h3 className={twMerge("text-lg font-bold text-black/50", inverse === true && "text-white/60")}>{title}</h3>
                 {popular === true && (
@@ -87,8 +90,8 @@ export const Pricing = () => {
               </div>
               <button className={twMerge("btn btn-primary w-full mt-[30px]", inverse === true && "bg-white text-black")}>{buttonText}</button>
               <ul className="flex flex-col gap-5 mt-8">
-                {features.map(feature => (
-                  <li key={Math.floor((Math.random() * 10) + 1)} className="text-sm flex items-center gap-4">
+                {features.map((feature, id) => (
+                  <li key={id} className="text-sm flex items-center gap-4">
                     <CheckIcon className="h-6 w-6" />
                     {feature}
                   </li>
