@@ -88,7 +88,7 @@ export const Pricing = () => {
               <button className={twMerge("btn btn-primary w-full mt-[30px]", inverse === true && "bg-white text-black")}>{buttonText}</button>
               <ul className="flex flex-col gap-5 mt-8">
                 {features.map(feature => (
-                  <li className="text-sm flex items-center gap-4">
+                  <li key={Math.floor((Math.random() * 10) + 1)} className="text-sm flex items-center gap-4">
                     <CheckIcon className="h-6 w-6" />
                     {feature}
                   </li>
