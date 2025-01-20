@@ -96,12 +96,12 @@ const TestimonialsColumn = (props: { className?: string; testimonials: typeof te
         <React.Fragment key={index}>
           {props.testimonials.map(({ text, imageSrc, name, username, id }) => (
             <div key={id} className="card">
-              <div>{text}</div>
-              <div className="flex items-center gap-2 mt-5">
-                <Image src={imageSrc} alt={name} width={40} height={40} className="h-10 w-10 rounded-full" />
-                <div className="flex flex-col">
-                  <div className="font-medium tracking-tight leading-5">{name}</div>
-                  <div className="leading-5 tracking-tight">{username}</div>
+              <div key={"1"}>{text}</div>
+              <div key={"223423"} className="flex items-center gap-2 mt-5">
+                <Image key={"2134"} src={imageSrc} alt={name} width={40} height={40} className="h-10 w-10 rounded-full" />
+                <div key={"5634"} className="flex flex-col">
+                  <div key={"32646"} className="font-medium tracking-tight leading-5">{name}</div>
+                  <div key={"532562"} className="leading-5 tracking-tight">{username}</div>
                 </div>
               </div>
             </div>
